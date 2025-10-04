@@ -23,6 +23,14 @@
 			* Verify the parts of your code
 		* Regression Test
 
+	* FastAPI: Web framework to build the API
+		* FastAPI CLI: Command-line interface for FastAPI
+			* `main.py`: FastAPI file that defines routes and controls API
+			* `test_main.py`: The pytest file for the FastAPI program
+	* HTTPX: HTTP client for Python
+	* Pydantic: Validation Library
+		* `schemas.py`: Define the Pydantic classes that validates data sent to the API
+	* #Uvicorn: Web server to run the API
 
 # Python Files and Their Functionality
 * `crud.py`: Helper function to query the database
@@ -38,3 +46,6 @@
 		* Define SQLAlchemy classes to store information from database tables.
 		* Describe the relationship between these tables so the Python code can access the related tables.
 * `test_crud.py`: The PyTest file to unit-test your SQLAlchemy files
+* `schema.py`: Pydantic classes define the structure of the data that the consumer will receive in their API responses
+* `main.py`: FastAPI, tie together all the files that you have created till now!
+* `test_main.py`: Unit-test the FastAPI without need to lunch it

@@ -19,7 +19,3 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base class = standard SQLAlchemy template for models.py
 Base = declarative_base()
-
-
-def hello():
-    print("hello world")
