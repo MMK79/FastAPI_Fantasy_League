@@ -1,4 +1,45 @@
-# API Components
+# SportsWorldCentral (SWC) Fantasy Football API Documentation
+
+This is a portfolio project base on "Hands-on API For Data Scientists" Book, which I developed a SportsWorldCentral API. This is a way to accessing data from fantasy footaball we Book, which I developed a SportsWorldCentral API. This is a way to accessing data from fantasy footaball website, www.sportsworldcentral.com
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Analytics](#analytics)   
+- [Player](#player) 
+- [Scoring](#scoring)   
+- [Membership](#membership) 
+- [Example Code](#example-code) 
+- [Software Development Kit (SDK)](#software-development-kitsdk) 
+- [API Components](#api-components)
+- [Python Files and Their Functionality](#python-files-and-their-functionality)
+
+## Getting Started
+Since all of the data is public, the SWC API doesn't require any authentication.  All of the the following data is available using GET endpoints that return  JSON data. 
+
+### Analytics
+Get information about the health of the API and counts of leagues, teams,  and players. 
+
+### Player
+You can get a list of all NFL players, or search for an individual player  by player_id. 
+
+### Scoring
+You can get a list of NFL player performances, including the fantasy points they  scored using SWC league scoring. 
+
+### Membership
+Get information about all the SWC fantasy football leagues and the teams in them. 
+## Example Code
+Here is some Python example code for accessing the health check endpoint: 
+
+```
+import httpx
+HEALTH_CHECK_ENDPOINT = "/"
+with httpx.Client(base_url=self.swc_base_url) as client:
+response = client.get(self.HEALTH_CHECK_ENDPOINT)
+print(response.json())
+``` 
+## Software Development Kit (SDK)
+
+## API Components
 * Database
 	* SQLite at this Stage
 * Database Classes
@@ -31,8 +72,11 @@
 	* Pydantic: Validation Library
 		* `schemas.py`: Define the Pydantic classes that validates data sent to the API
 	* #Uvicorn: Web server to run the API
+    * Swagger UI: Interactive FastAPI documentation, available through `/docs` URL
+    * Redoc: FastAPI documentation, available through `/redoc` URL
+    * OpenAPI Specification (OAS) file: help Swagger and Redoc to generate documentation and other things, available through `/openapi.json` URL
 
-# Python Files and Their Functionality
+## Python Files and Their Functionality
 * `crud.py`: Helper function to query the database
 	* Contains Query Functions
 	* CRUD $\overset{Stands For}{=}$ Create, Write, Update, Delete
