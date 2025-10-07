@@ -4,6 +4,12 @@ from datetime import date
 from typing import Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Query
+
+# to access bulk folder
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+from starlette.responses import HTMLResponse
+
 from sqlalchemy.orm import Session
 
 import crud
@@ -40,6 +46,11 @@ app = FastAPI(
 )
 # When running API through CLI with Uvicorn, you will reference main:app, referring to the app object in main.py
 
+# Enable bulk folder through API
+BASE_DIR = Path(__file__).resolve().parent
+BULK_DIR = BASE_DIR / "bulk"
+app.mount("/bulk", StaticFiles(directory=str(BULK_DIR)), name="bulk")
+
 
 # Dependency, create database session
 def get_db():
@@ -54,6 +65,17 @@ def get_db():
 @app.get("/", tags=["analytics"])
 async def root():
     return {"message": "API health check successful"}
+
+
+# Add a listing page at /v0/bulk/
+@app.get("/v0/bulk/", response_class=HTMLResponse)
+async def list_bulk_files():
+    files = [f.name for f in BULK_DIR.iterdir() if f.is_file()]
+    if not files:
+        return "<h3>No files found in the bulk folder.</h3>"
+
+    links = [f'<li><a href="/bulk/{f}">{f}</a></li>' for f in files]
+    return f"<h2>Available files:</h2><ul>{''.join(links)}</ul>"
 
 
 @app.get("/v0/players/", response_model=list[schemas.Player], tags=["player"])

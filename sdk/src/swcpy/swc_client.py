@@ -31,10 +31,7 @@ class SWCClient:
     LIST_PERFORMANCES_ENDPOINT = "/v0/performances/"
     LIST_TEAMS_ENDPOINT = "/v0/teams/"
     GET_COUNTS_ENDPOINT = "/v0/counts"
-    BULK_FILE_BASE_URL = (
-        "https://raw.githubusercontent.com/MMK79"
-        + "/FastAPI_Fantasy_League/main/api/bulk/"
-    )
+    BULK_FILE_BASE_URL = "/v0/bulk/"
 
     # pass user configuration to the client
     def __init__(self, input_config: config.SWCConfing):
