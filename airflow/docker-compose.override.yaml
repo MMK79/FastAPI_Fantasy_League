@@ -1,0 +1,23 @@
+# These are overrides to the default docker compose
+# Hide the built-in Airflow Examples
+x-airflow-common:
+  &airflow-common
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+
+services:
+  # Airflow look for changes within your code more frequently
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    environment:
+      <<: *airflow-common-env
+      AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: '30'
+  # Allow you to use the Airflow web interface
+  # airflow-webserver:
+  #   <<: *airflow-common
+  #   command: webserver
+  #   environment:
+  #     <<: *airflow-common-env
+  #     AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: 'True'
