@@ -1,5 +1,5 @@
 ## API Components
-[[API Components]]
+[[API-Components]]
 * Database
 	* SQLite
 		* You can later switch to PostgreSQL or MySql later on

@@ -1,8 +1,8 @@
 * Endpoint Description + HTTP Verb + URL
 * `v0` at the start, so consumer know that product is not that reliable, there can be some potential breaking changes
-![[API Components]]
-* We implemented Database + Database Classes in [[Chapter 3 - Creating Your Database]]
-* We Implement the API Controller + Data Transfer in [[Chapter 4 - Developing the FastAPI Code]]
+![[API-Components|center]]
+* We implemented Database + Database Classes in [[Chapter 03 - Creating Your Database]]
+* We Implement the API Controller + Data Transfer in [[Chapter 04 - Developing the FastAPI Code]]
 * Tools
 	* [[#FastAPI]]: Web framework to build the API
 		* FastAPI CLI: Command-line interface for FastAPI

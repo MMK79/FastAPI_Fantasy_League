@@ -59,7 +59,7 @@ Attributes of gPRC:
 	* Advantage = Data is always up-to-date with the web application
 	* Disadvantage = Could slow down the web application if a large number of requests are being made to the API
 		* You can physically separate API from the web application to solve this problem
-![[Application-Architecture]]
+![[Application-Architecture|center]]
 
 ## Additional Resources
 * [The Ten REST Commandments](https://nordicapis.com/the-ten-rest-commandments/)

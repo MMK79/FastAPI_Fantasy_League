@@ -12,7 +12,7 @@ tags: [excalidraw]
 ## Text Elements
 Web Application ^MrdJtX42
 
-[[API Components|API]] ^I1aDrtQB
+[[API-Components|API]] ^I1aDrtQB
 
 Website
 Database ^MFJaXIDl
