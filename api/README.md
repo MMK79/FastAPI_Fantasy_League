@@ -1,6 +1,8 @@
 # SportsWorldCentral (SWC) Fantasy Football API Documentation
 
 This is a portfolio project base on "Hands-on API For Data Scientists" Book, which I developed a SportsWorldCentral API. This is a way to accessing data from fantasy footaball we Book, which I developed a SportsWorldCentral API. This is a way to accessing data from fantasy footaball website, www.sportsworldcentral.com
+![API-Design](API-Architecture.png)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -71,7 +73,7 @@ print(response.json())
 	* HTTPX: HTTP client for Python
 	* Pydantic: Validation Library
 		* `schemas.py`: Define the Pydantic classes that validates data sent to the API
-	* #Uvicorn: Web server to run the API
+	* Uvicorn: Web server to run the API
     * Swagger UI: Interactive FastAPI documentation, available through `/docs` URL
     * Redoc: FastAPI documentation, available through `/redoc` URL
     * OpenAPI Specification (OAS) file: help Swagger and Redoc to generate documentation and other things, available through `/openapi.json` URL

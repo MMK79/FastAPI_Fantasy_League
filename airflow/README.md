@@ -1,3 +1,4 @@
+![Airflow-System](Airflow.png)
 Create a Bsic DAG within Airflow for better understanding of how we can automate the process of fetching data into the analytics system
 * DAG file exist in dag folder
 * Others folders are a map folders to docker compose of a Airflow
